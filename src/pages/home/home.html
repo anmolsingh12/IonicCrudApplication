@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Details Page</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="row header">
+      <div class="col">Id</div>
+      <div class="col">Name</div>
+      <div class="col">Username</div>
+      <div class="col">Email</div>
+      <div class="col">Phone</div>
+      <div class="col">Created At</div>
+      <div class="col">Modified At</div>
+      <div class="col">Options</div>
+    </div>
+    <div class="result" *ngIf="check">
+      <div class="row" *ngFor="let d of dataElement" >
+        <div class="col">{{d.id}}</div>
+        <div class="col">{{d.name}}</div>
+        <div class="col">{{d.uname}}</div>
+        <div class="col">{{d.email}}</div>
+        <div class="col">{{d.phone}}</div>
+        <div class="col">{{d.createdAt}}</div>
+        <div class="col">{{d.modifiedAt}}</div>
+        <div class="col"><ion-icon button name="brush" (click)="edit(d.id)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-icon><ion-icon button name="trash" (click)="delete(d.id)"></ion-icon></div>
+      </div>
+    </div>  
+  <button ion-button block (click) = "showTable()"><ion-icon name="eye"></ion-icon>&nbsp; &nbsp;See User Details</button>
+
+  
+</ion-content>
