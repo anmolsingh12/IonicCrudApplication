@@ -4,24 +4,31 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import {AdduserPage} from '../pages/adduser/adduser';
+import { AdduserPage } from '../pages/adduser/adduser';
 import { EdituserPage } from '../pages/edituser/edituser';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule} from '@angular/http';
+import {SimpleNotificationsModule} from 'angular2-notifications';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AdduserPage,
-    EdituserPage
+    EdituserPage,
+    
   ],
   imports: [
-    BrowserModule, HttpClientModule,
+    BrowserModule, 
+    HttpClientModule,
+    BrowserAnimationsModule,
     HttpModule,
+    SimpleNotificationsModule.forRoot(),
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -34,7 +41,7 @@ import { HttpModule} from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

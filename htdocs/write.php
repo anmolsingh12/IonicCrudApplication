@@ -46,7 +46,7 @@
                 echo "Uname: " .$uname;
                 echo "Pass: " .$pass;
                 echo "Email: " .$email;
-                echo "Phone: " .$phone;
+                print "Phone: " .$phone;
                 echo "Created: " .$created;
                 echo "Modified: " .$modified;
 

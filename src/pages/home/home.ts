@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { EdituserPage } from '../edituser/edituser';
+import {NotificationsService} from 'angular2-notifications';
 
 @Component({
   selector: 'page-home',
@@ -18,7 +19,7 @@ export class HomePage {
   url:string = 'http://localhost/read.php';
   public response : Array<any> = [];
 
-  constructor(public navCtrl: NavController, public http: HttpClient) {
+  constructor(public navCtrl: NavController, public http: HttpClient,private notif:NotificationsService) {
       this.showTable();
   }
  
@@ -43,22 +44,25 @@ export class HomePage {
       });
     }
 
-    delete(idelete:string)
+    delete(idelete:number)
     {
       var url = 'http://localhost/delete.php';
      var mydata = JSON.stringify({id : idelete});
     
-     alert("Record Deleted!! Please Refresh");
-
      this.http.post(url, mydata)
        .subscribe(data => {
+         console.log(JSON.stringify(data));
        },
        error => {
      console.log("Oooops!");
+     this.notif.success("Record deleted");
+     this.navCtrl.push(HomePage);
      });
+
+     
     }
 
-    edit(d_edit:string)
+    edit(d_edit:number)
     {
       this.navCtrl.push(EdituserPage, {rowid:d_edit}
       );

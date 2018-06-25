@@ -16,7 +16,7 @@ export class EdituserPage {
   @ViewChild('rowPhone')rowPhone;
 
 
-  rowid:string;
+  rowid:number;
   dataElement:any;
   editElement:EditElement[]=[];
   check:Boolean=false;
@@ -65,12 +65,19 @@ export class EdituserPage {
   updateUserData()
    {
      var url = 'http://localhost/update.php';
-      var mydata = JSON.stringify({id : this.rowId.value, name: this.rowName.value, uname: this.rowUname.value, email: this.rowEmail.value, phone: this.rowPhone.value });
-
+      let mydata:any = JSON.stringify({id : this.rowId.value, name: this.rowName.value, uname: this.rowUname.value, email: this.rowEmail.value, phone: this.rowPhone.value});
+      console.log(mydata);
       this.http.post(url, mydata)
         .subscribe(data => {
-          console.log("Data : "+data);
-          alert("Data Updated!!");
+          
+            console.log("Data : "+mydata);
+            alert("Data Updated!!");
+          
+          
+          error=>{
+          
+          }
+          
         });
    }
 
@@ -81,7 +88,7 @@ export class EdituserPage {
 }
 export interface EditElement
 {
-  id:string,
+  id:number,
   name:string,
   uname:string,
   email:string,

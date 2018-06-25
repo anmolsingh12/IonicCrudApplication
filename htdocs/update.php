@@ -32,7 +32,7 @@
         // $name='Andsjbdhs';
         // $uname='daasas';
         // $email='asv@123';
-        // $phone='545454';
+        //$phone='9931434250';
 
         if($name != "")
         {
@@ -45,17 +45,17 @@
             }
             else
             {
-                echo "Id: " .$id;
-                echo "Name: " .$name;
-                echo "Uname: " .$uname;
-                echo "Email: " .$email;
-                echo "Phone: " .$phone;
-                echo "Modified: " .$modified;
+                // echo "Id: " .$id;
+                // echo "Name: " .$name;
+                // echo "Uname: " .$uname;
+                // echo "Email: " .$email;
+                // echo "Phone: " .$phone;
+                // echo "Modified: " .$modified;
 
-                $sql  = "UPDATE users SET name='$name', uname='$uname', email='$email', phone='$phone', modifiedAt='$modified'  WHERE id=$id";
+                $sql  = "UPDATE users SET name='$name', uname='$uname', email='$email', phone='$phone', modifiedAt='$modified'  WHERE id='$id'";
                 $stmt = mysqli_query($con, $sql) or die ("MySQL Error:".mysqli_error($con));
 
-                echo "successfully inserted !";
+                // echo "successfully inserted !";
             }
         }
         else 

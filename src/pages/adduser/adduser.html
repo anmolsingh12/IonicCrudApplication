@@ -1,7 +1,7 @@
 
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Add User</ion-title>
     <button ion-button menuToggle><ion-icon left name="menu"></ion-icon></button>
   </ion-navbar>
@@ -14,38 +14,38 @@
 
     <ion-list>
         <ion-item>
-            <ion-label color="primary">Id</ion-label>
-            <ion-input placeholder="10 digit Id" #id name="id"></ion-input>
+            <ion-label color="secondaryvariant">Id*</ion-label>
+            <ion-input placeholder="10 digit Id" #id name="id" required></ion-input>
         </ion-item>
 
       <ion-item>
-        <ion-label color="primary">Name</ion-label>
-        <ion-input placeholder="Enter Full Name" #name name="name"></ion-input>
+        <ion-label color="secondaryvariant">Name*</ion-label>
+        <ion-input placeholder="Enter Full Name" #name name="name" required></ion-input>
       </ion-item>
     
       <ion-item>
-          <ion-label color="primary">Username</ion-label>
-          <ion-input placeholder="Enter Username" #uname name="uname"></ion-input>
+          <ion-label color="secondaryvariant">Username*</ion-label>
+          <ion-input placeholder="Enter Username" #uname name="uname" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="primary">Password</ion-label>
-        <ion-input type="password" placeholder="(6-16 chars only)" #pass name="pass"></ion-input>
+        <ion-label color="secondaryvariant">Password*</ion-label>
+        <ion-input type="password" placeholder="(6-16 chars only)" #pass name="pass" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="primary">Re-enter Password</ion-label>
-        <ion-input type="password" placeholder="(6-16 chars only)"></ion-input>
+        <ion-label color="secondaryvariant">Re-enter Password*</ion-label>
+        <ion-input type="password" placeholder="(6-16 chars only)" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="primary">Email</ion-label>
-        <ion-input type="email" placeholder="Email" #email name="email"></ion-input>
+        <ion-label color="secondaryvariant">Email*</ion-label>
+        <ion-input type="email" placeholder="Email" #email name="email" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label color="primary">Phone</ion-label>
-        <ion-input placeholder="Phone" #phone name="phone"></ion-input>
+        <ion-label color="secondaryvariant">Phone*</ion-label>
+        <ion-input placeholder="Phone" #phone name="phone" required></ion-input>
       </ion-item>
       
     </ion-list>
